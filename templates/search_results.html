@@ -1,0 +1,36 @@
+<!-- templates/search_results.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results</title>
+</head>
+<body>
+    <h1>Search Results for "{{ query }}"</h1>
+
+    <h2>YouTube Highlights Videos:</h2>
+    <ul>
+        {% for video in youtube_results %}
+            <li>
+                <a href="{{ video.url }}" target="_blank">{{ video.title }}</a>
+            </li>
+        {% endfor %}
+        <li>
+            <a href="https://www.youtube.com/watch?v=jevgrwFp7kc" target="_blank">YouTube Video</a>
+        </li>
+    </ul>
+
+    <h2>Amazon MacBook Pro Prices:</h2>
+    <ul>
+        {% for product in amazon_results %}
+            <li>
+                {{ product.title }} - {{ product.price }}
+            </li>
+        {% endfor %}
+        <li>
+            <a href="https://www.amazon.in/s?k=apple+macbook+pro+cost&adgrpid=1329311167762511&hvadid=83082218866594&hvbmt=bp&hvdev=c&hvlocphy=149053&hvnetw=o&hvqmt=p&hvtargid=kwd-83082828396494%3Aloc-90&hydadcr=24540_2369325&tag=msndeskstdin-21&ref=pd_sl_5omblvj42v_p" target="_blank">Amazon Link</a>
+        </li>
+    </ul>
+</body>
+</html>
